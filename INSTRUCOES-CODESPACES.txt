@@ -1,0 +1,21 @@
+PASSO A PASSO - CLINICA ASINELLI
+
+1. Abra o repositório no Codespaces.
+2. Envie todos os arquivos e pastas deste projeto para a raiz do repositório.
+3. Confirme que package.json aparece na mesma tela em que aparecem src, public e index.html.
+4. Abra o terminal e execute apenas:
+
+npm install
+npm run dev
+
+5. Quando aparecer a mensagem Local ou Forwarded Address, abra o link da porta 8080 ou 5173.
+
+IMPORTANTE:
+- Não cole códigos React/TypeScript diretamente no terminal.
+- Os códigos ficam dentro dos arquivos .tsx, .ts e .css.
+- O terminal recebe apenas comandos como npm install e npm run dev.
+
+PÁGINAS:
+Clínica: /#/
+CMA: /#/cma
+Epigenics: /#/epigenics

@@ -1,0 +1,561 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 220 28% 12%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 28% 12%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 28% 12%;
+    --primary: 220 50% 20%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 32% 95%;
+    --secondary-foreground: 220 28% 12%;
+    --muted: 210 30% 96%;
+    --muted-foreground: 220 14% 42%;
+    --accent: 190 95% 42%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 214 32% 90%;
+    --input: 214 32% 90%;
+    --ring: 190 95% 42%;
+    --radius: 1rem;
+    --navy: 216 55% 17%;
+    --navy-light: 212 50% 28%;
+    --gold: 42 92% 52%;
+    --gold-light: 44 96% 62%;
+    --cream: 210 42% 98%;
+    --stone: 215 12% 45%;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply tracking-tight;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply mx-auto max-w-7xl;
+  }
+
+  .section-spacing {
+    @apply py-16 md:py-20 lg:py-24;
+  }
+
+  .eyebrow,
+  .epi-eyebrow {
+    @apply mb-4 inline-flex items-center rounded-full border border-white/70 bg-white/75 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-slate-700 shadow-sm backdrop-blur-xl;
+  }
+
+  .cma-eyebrow {
+    @apply mb-4 inline-flex items-center rounded-full border border-sky-300/[0.15] bg-sky-300/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.22em] text-sky-200;
+  }
+
+  .section-title {
+    @apply mb-4 text-3xl font-semibold leading-tight text-slate-950 md:text-4xl lg:text-5xl;
+  }
+
+  .section-text {
+    @apply text-base leading-8 text-slate-600 md:text-lg;
+  }
+
+  .shadow-soft {
+    box-shadow: 0 12px 35px -22px rgba(15, 23, 42, 0.35);
+  }
+
+  .glass-pill,
+  .epi-pill {
+    @apply inline-flex items-center gap-2 rounded-full border border-white/70 bg-white/70 px-4 py-2 text-sm font-medium text-slate-700 shadow-soft backdrop-blur-xl;
+  }
+
+  /* CLINIC */
+  .bg-clinic {
+    background: linear-gradient(180deg, #f7fcff 0%, #eef7fb 48%, #f8fbfd 100%);
+  }
+
+  .clinic-hero {
+    background:
+      radial-gradient(circle at 12% 15%, rgba(125, 211, 252, 0.34), transparent 26%),
+      radial-gradient(circle at 88% 20%, rgba(196, 181, 253, 0.28), transparent 24%),
+      linear-gradient(180deg, #f9fdff 0%, #edf7fc 100%);
+  }
+
+  .clinic-glow {
+    @apply absolute rounded-full blur-3xl;
+    animation: clinicFloat 9s ease-in-out infinite;
+  }
+
+  .clinic-glow-one {
+    left: -6rem;
+    top: 9rem;
+    height: 18rem;
+    width: 18rem;
+    background: rgba(103, 232, 249, 0.2);
+  }
+
+  .clinic-glow-two {
+    right: -5rem;
+    top: 2rem;
+    height: 22rem;
+    width: 22rem;
+    background: rgba(167, 139, 250, 0.2);
+    animation-delay: -3s;
+  }
+
+  .clinic-gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(90deg, #0f172a 0%, #0ea5e9 55%, #4f46e5 100%);
+  }
+
+  .clinic-stat {
+    @apply rounded-3xl border border-white/80 bg-white/[0.65] p-4 shadow-soft backdrop-blur-xl;
+  }
+
+  .clinic-photo-shell {
+    @apply relative overflow-hidden rounded-[2.4rem] border border-white/80 bg-white/70 p-3 shadow-[0_35px_80px_-35px_rgba(15,23,42,0.42)] backdrop-blur-2xl;
+  }
+
+  .clinic-photo-shell img {
+    border-radius: 1.85rem;
+  }
+
+  .clinic-photo-overlay {
+    @apply pointer-events-none absolute inset-3 rounded-[1.85rem];
+    background: linear-gradient(180deg, transparent 45%, rgba(15, 23, 42, 0.28) 100%);
+  }
+
+  .clinic-doctor-card {
+    @apply absolute bottom-7 left-7 right-7 flex flex-col gap-3 rounded-3xl border border-white/70 bg-white/[0.76] p-5 shadow-xl backdrop-blur-2xl sm:flex-row sm:items-center sm:justify-between;
+  }
+
+  .clinic-floating-card {
+    @apply absolute hidden items-center gap-3 rounded-2xl border border-white/75 bg-white/80 p-4 shadow-[0_20px_45px_-26px_rgba(15,23,42,0.45)] backdrop-blur-xl lg:flex;
+    animation: clinicFloat 7s ease-in-out infinite;
+  }
+
+  .clinic-floating-top {
+    right: -2rem;
+    top: 4rem;
+  }
+
+  .clinic-floating-bottom {
+    bottom: 7rem;
+    left: -2rem;
+    animation-delay: -2.5s;
+  }
+
+  .clinic-service-card {
+    @apply rounded-[2rem] border border-white/80 bg-white/70 p-6 shadow-[0_18px_45px_-28px_rgba(15,23,42,0.4)] backdrop-blur-xl transition duration-500;
+  }
+
+  .clinic-service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 28px 65px -32px rgba(15, 23, 42, 0.45);
+  }
+
+  .clinic-service-icon,
+  .epi-icon-box {
+    @apply inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br from-sky-100 to-white text-sky-700 shadow-soft;
+  }
+
+  .clinic-feature-grid {
+    @apply grid gap-8 lg:grid-cols-[.92fr_1.08fr];
+  }
+
+  .clinic-method-panel,
+  .clinic-doctor-section,
+  .clinic-contact-panel {
+    @apply rounded-[2.2rem] border border-white/80 bg-white/[0.68] p-8 shadow-[0_24px_65px_-34px_rgba(15,23,42,0.38)] backdrop-blur-2xl lg:p-10;
+  }
+
+  .clinic-step {
+    @apply grid grid-cols-[auto_1fr] gap-4 rounded-3xl border border-white/70 bg-white/75 p-5 shadow-soft;
+  }
+
+  .clinic-step > span {
+    @apply inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-slate-950 text-sm font-semibold text-white;
+  }
+
+  .clinic-doctor-section {
+    @apply grid gap-10 lg:grid-cols-[1.08fr_.92fr];
+  }
+
+  .clinic-check-item,
+  .epi-check-item {
+    @apply flex items-start gap-3 rounded-2xl border border-white/70 bg-white/75 p-4 text-sm leading-7 text-slate-700 shadow-soft;
+  }
+
+  .clinic-mini-card {
+    @apply rounded-3xl border border-white/75 bg-white/75 p-5 shadow-soft transition duration-300 hover:-translate-y-1;
+  }
+
+  .clinic-link-card {
+    @apply flex min-h-[280px] items-end justify-between gap-6 overflow-hidden rounded-[2.2rem] p-8 shadow-[0_25px_60px_-35px_rgba(15,23,42,0.5)] transition duration-500 hover:-translate-y-1 lg:p-10;
+  }
+
+  .clinic-link-cma {
+    background:
+      radial-gradient(circle at 88% 12%, rgba(125, 211, 252, 0.22), transparent 28%),
+      linear-gradient(135deg, #071525 0%, #12385e 100%);
+  }
+
+  .clinic-link-epi {
+    background:
+      radial-gradient(circle at 86% 14%, rgba(196, 181, 253, 0.42), transparent 28%),
+      linear-gradient(135deg, #f4efff 0%, #e6f8ff 100%);
+  }
+
+  .clinic-contact-panel {
+    @apply grid gap-10 lg:grid-cols-[1.08fr_.92fr];
+  }
+
+  .clinic-contact-item {
+    @apply flex items-start gap-4 rounded-3xl border border-white/70 bg-white/75 p-5 shadow-soft;
+  }
+
+  /* CMA */
+  .bg-cma {
+    background: #020817;
+  }
+
+  .cma-hero {
+    background:
+      radial-gradient(circle at 15% 15%, rgba(56, 189, 248, 0.22), transparent 26%),
+      radial-gradient(circle at 88% 10%, rgba(14, 165, 233, 0.16), transparent 24%),
+      linear-gradient(135deg, #020817 0%, #071a2f 46%, #0d2b4d 100%);
+  }
+
+  .cma-grid {
+    @apply absolute inset-0 opacity-20;
+    background-image:
+      linear-gradient(rgba(125, 211, 252, 0.12) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(125, 211, 252, 0.12) 1px, transparent 1px);
+    background-size: 56px 56px;
+    mask-image: linear-gradient(to bottom, black, transparent 82%);
+  }
+
+  .cma-radar {
+    @apply absolute rounded-full border border-sky-300/[0.15];
+    animation: radarPulse 5s ease-out infinite;
+  }
+
+  .cma-radar-one {
+    right: 10%;
+    top: 18%;
+    height: 20rem;
+    width: 20rem;
+  }
+
+  .cma-radar-two {
+    right: 14%;
+    top: 24%;
+    height: 13rem;
+    width: 13rem;
+    animation-delay: -2.5s;
+  }
+
+  .cma-route-line {
+    @apply absolute left-[8%] right-[8%] top-[40%] h-px;
+    background: linear-gradient(90deg, transparent, rgba(125, 211, 252, 0.75), transparent);
+    transform: rotate(-8deg);
+  }
+
+  .cma-plane {
+    @apply absolute h-7 w-7 text-sky-300/70;
+    left: 8%;
+    top: 40%;
+    animation: flyAcross 11s linear infinite;
+  }
+
+  .cma-pill {
+    @apply inline-flex items-center gap-2 rounded-full border border-sky-300/[0.15] bg-white/[0.06] px-4 py-2 text-sm font-medium text-sky-100 backdrop-blur-xl;
+  }
+
+  .cma-small-badge {
+    @apply inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.05] px-4 py-2 text-xs text-slate-200;
+  }
+
+  .cma-cockpit-card,
+  .cma-process-shell,
+  .cma-info-panel,
+  .cma-faq-panel {
+    @apply rounded-[2.2rem] border border-white/10 bg-white/[0.055] p-8 shadow-[0_30px_90px_-45px_rgba(56,189,248,0.4)] backdrop-blur-2xl lg:p-10;
+  }
+
+  .cma-icon-box {
+    @apply inline-flex h-14 w-14 items-center justify-center rounded-2xl border border-sky-300/[0.15] bg-sky-300/10 text-sky-200;
+  }
+
+  .cma-data-card,
+  .cma-detail-card {
+    @apply rounded-3xl border border-white/10 bg-black/[0.15] p-5;
+  }
+
+  .cma-status-bar {
+    @apply flex items-center gap-3 rounded-2xl border border-emerald-300/[0.15] bg-emerald-300/10 p-4 text-sm text-emerald-100;
+  }
+
+  .cma-status-dot {
+    @apply h-2.5 w-2.5 rounded-full bg-emerald-300;
+    box-shadow: 0 0 18px rgba(110, 231, 183, 0.8);
+    animation: statusPulse 2s ease-in-out infinite;
+  }
+
+  .cma-audience-card {
+    @apply rounded-[2rem] border border-white/10 bg-white/[0.045] p-6 backdrop-blur-xl transition duration-500 hover:-translate-y-2 hover:border-sky-300/20;
+  }
+
+  .cma-process-shell {
+    @apply grid gap-10 lg:grid-cols-[.9fr_1.1fr];
+  }
+
+  .cma-process-card {
+    @apply grid gap-5 rounded-3xl border border-white/10 bg-black/[0.15] p-5 sm:grid-cols-[auto_1fr] sm:items-center;
+  }
+
+  .cma-number {
+    @apply text-xs font-semibold tracking-[0.18em] text-sky-300;
+  }
+
+  .cma-process-icon {
+    @apply inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-sky-300/10 text-sky-200;
+  }
+
+  .cma-faq-item {
+    @apply flex items-center justify-between gap-4 rounded-2xl border border-white/10 bg-black/[0.15] p-4 text-sm text-white transition hover:border-sky-300/20 hover:bg-white/[0.06];
+  }
+
+  /* EPIGENICS */
+  .bg-epigenics {
+    background: linear-gradient(180deg, #fbfaff 0%, #f2f7ff 48%, #f9fbff 100%);
+  }
+
+  .epi-hero {
+    background:
+      radial-gradient(circle at 12% 16%, rgba(34, 211, 238, 0.2), transparent 24%),
+      radial-gradient(circle at 86% 12%, rgba(139, 92, 246, 0.24), transparent 28%),
+      linear-gradient(180deg, #fcfbff 0%, #eef6ff 100%);
+  }
+
+  .epi-orb {
+    @apply absolute rounded-full blur-3xl;
+    animation: epiFloat 10s ease-in-out infinite;
+  }
+
+  .epi-orb-one {
+    left: -4rem;
+    top: 8rem;
+    height: 18rem;
+    width: 18rem;
+    background: rgba(34, 211, 238, 0.16);
+  }
+
+  .epi-orb-two {
+    right: -3rem;
+    top: 2rem;
+    height: 24rem;
+    width: 24rem;
+    background: rgba(139, 92, 246, 0.18);
+    animation-delay: -3s;
+  }
+
+  .epi-orb-three {
+    bottom: 0;
+    left: 45%;
+    height: 15rem;
+    width: 15rem;
+    background: rgba(59, 130, 246, 0.12);
+    animation-delay: -6s;
+  }
+
+  .epi-network {
+    @apply absolute inset-0 opacity-30;
+    background-image: radial-gradient(circle, rgba(99, 102, 241, 0.25) 1.5px, transparent 1.5px);
+    background-size: 34px 34px;
+    mask-image: radial-gradient(circle at center, black, transparent 78%);
+  }
+
+  .epi-gradient-text {
+    @apply bg-clip-text text-transparent;
+    background-image: linear-gradient(90deg, #7c3aed 0%, #2563eb 48%, #0891b2 100%);
+  }
+
+  .epi-small-badge {
+    @apply inline-flex items-center gap-2 rounded-full border border-white/75 bg-white/[0.65] px-4 py-2 text-xs text-slate-700 shadow-soft backdrop-blur-xl;
+  }
+
+  .epi-dna-card,
+  .epi-journey-shell,
+  .epi-clinical-panel,
+  .epi-request-card,
+  .epi-payment-shell {
+    @apply rounded-[2.2rem] border border-white/80 bg-white/[0.68] p-8 shadow-[0_30px_80px_-42px_rgba(76,29,149,0.34)] backdrop-blur-2xl lg:p-10;
+  }
+
+  .epi-dna-visual {
+    @apply relative flex min-h-[270px] items-center justify-center overflow-hidden rounded-[1.8rem] border border-violet-200/70;
+    background:
+      radial-gradient(circle at 25% 30%, rgba(34, 211, 238, 0.16), transparent 28%),
+      radial-gradient(circle at 75% 30%, rgba(139, 92, 246, 0.2), transparent 30%),
+      linear-gradient(135deg, #ffffff 0%, #f6f2ff 100%);
+  }
+
+  .epi-dna-line {
+    @apply absolute h-px bg-gradient-to-r from-transparent via-violet-300 to-transparent;
+    width: 140%;
+  }
+
+  .epi-dna-line-one {
+    transform: rotate(14deg);
+  }
+
+  .epi-dna-line-two {
+    transform: rotate(-14deg);
+  }
+
+  .epi-data-card {
+    @apply rounded-3xl border border-violet-100 bg-white/75 p-5 shadow-soft;
+  }
+
+  .epi-security-bar {
+    @apply flex items-start gap-3 rounded-2xl border border-emerald-200 bg-emerald-50/80 p-4 text-sm leading-6 text-emerald-900;
+  }
+
+  .epi-highlight-card {
+    @apply rounded-[2rem] border border-white/80 bg-white/70 p-6 shadow-[0_18px_45px_-28px_rgba(76,29,149,0.3)] backdrop-blur-xl transition duration-500 hover:-translate-y-2;
+  }
+
+  .epi-icon-box {
+    @apply bg-gradient-to-br from-violet-100 to-white text-violet-700;
+  }
+
+  .epi-journey-shell,
+  .epi-payment-shell {
+    @apply grid gap-10 lg:grid-cols-[.92fr_1.08fr];
+  }
+
+  .epi-step-card {
+    @apply grid grid-cols-[auto_1fr] gap-4 rounded-3xl border border-white/80 bg-white/[0.78] p-5 shadow-soft;
+  }
+
+  .epi-step-number {
+    @apply inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-gradient-to-br from-violet-600 to-blue-600 text-sm font-semibold text-white;
+  }
+
+  .epi-request-card {
+    background:
+      radial-gradient(circle at 85% 10%, rgba(139, 92, 246, 0.22), transparent 28%),
+      rgba(255, 255, 255, 0.72);
+  }
+
+  .epi-payment-card {
+    @apply grid grid-cols-[auto_1fr] gap-4 rounded-3xl border border-white/80 bg-white/[0.78] p-5 shadow-soft;
+  }
+}
+
+@layer utilities {
+  .py-18 {
+    padding-top: 4.5rem;
+    padding-bottom: 4.5rem;
+  }
+}
+
+@keyframes clinicFloat {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+@keyframes radarPulse {
+  0% {
+    transform: scale(0.86);
+    opacity: 0.25;
+  }
+  65% {
+    opacity: 0.4;
+  }
+  100% {
+    transform: scale(1.16);
+    opacity: 0;
+  }
+}
+
+@keyframes flyAcross {
+  0% {
+    left: 8%;
+    transform: rotate(8deg) translateY(0);
+  }
+  50% {
+    transform: rotate(8deg) translateY(-12px);
+  }
+  100% {
+    left: 88%;
+    transform: rotate(8deg) translateY(0);
+  }
+}
+
+@keyframes statusPulse {
+  0%,
+  100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes epiFloat {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+  50% {
+    transform: translate3d(0, -18px, 0) scale(1.06);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

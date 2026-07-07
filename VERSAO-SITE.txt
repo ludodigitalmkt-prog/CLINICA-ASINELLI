@@ -1,0 +1,8 @@
+CLINICA ASINELLI - VERSAO MODERNA FINAL
+
+Paginas:
+- Clinica: visual claro, glass, animacoes suaves e textos para pacientes
+- CMA: visual aeronautico escuro, radar, rota e movimento de aviao
+- Epigenics: visual tecnologico, DNA, particulas e area de pagamento
+
+Estrutura responsiva para desktop e celular.
